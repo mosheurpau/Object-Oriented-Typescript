@@ -8,12 +8,12 @@ oop.ts
  * reusability, and maintainability.
  *
 
-**
- * Class and Object
+** Class and Object
  *
  * A class is a blueprint for creating objects. It defines the properties (data) and methods (behavior)
  * that objects of that class will have.
- *
+ 
+
  ```
 class Dog {
   name: string;
@@ -27,19 +27,22 @@ class Dog {
   bark(): void {
     console.log("Woof!");
   }
-} ```
+} 
 
 let myDog = new Dog("Buddy", "Golden Retriever");
 myDog.bark(); // Output: Woof!
 
-**
- * Inheritance
- *
+```
+
+
+ ** Inheritance
+ 
  * Inheritance allows a class (child class) to inherit properties and methods from another class (parent class).
  * This promotes code reuse and establishes relationships between classes.
- *
+ 
+
  ```
-class Animal {
+ class Animal {
   name: string;
 
   constructor(name: string) {
@@ -61,21 +64,21 @@ class Snake extends Animal {
     super.move(distanceInMeters);
   }
 }
-```
 let sam = new Snake("Sammy the Python");
 sam.move(); // Output: Slithering... Sammy the Python moved 5m.
+```
 
-**
- * Type Guards
+
+** Type Guards
  *
  * Type guards help you check the type of a variable at runtime.
- *
+ 
 
-**
- * Type Guard using typeof
+**Type Guard using typeof
  *
  * The `typeof` operator returns a string indicating the type of the operand.
  
+
  ```
 function padLeft(value: string | number, padding: string | number) {
   if (typeof padding === "number") {
@@ -87,12 +90,13 @@ function padLeft(value: string | number, padding: string | number) {
   throw new Error(`Expected string or number, got '${padding}'.`);
 }
 ```
-**
- * Type Guard using instanceof
+
+**Type Guard using instanceof
  *
  * The `instanceof` operator checks if an object is an instance of a particular class.
- *
- ```
+ 
+
+```
 class Cat {
   meow() { console.log("Meow!"); }
 }
@@ -106,15 +110,15 @@ function makeSound(animal: Dog | Cat) {
 }
 ```
 
-**
- * Access Modifiers
+** Access Modifiers
  *
  * Access modifiers control the visibility of class members (properties and methods).
  *
  * - public: Accessible from anywhere. (Default)
  * - protected: Accessible within the class and its subclasses.
  * - private: Accessible only within the class.
- *
+ 
+
  ```
 class Person {
   public name: string;
@@ -128,12 +132,13 @@ class Person {
   }
 }
 ```
-**
- * Getters and Setters
+
+** Getters and Setters
  *
  * Getters and setters provide controlled access to class properties.
- *
- ```
+ 
+
+```
 class Employee {
   private _name: string;
 
@@ -154,13 +159,13 @@ class Employee {
   }
 }
 ```
-**
- * Statics
+
+** Statics
  *
  * Static members belong to the class itself, not to specific instances.
- *
- ```
-class Grid {
+ 
+
+```class Grid {
   static origin = { x: 0, y: 0 };
 
   calculateDistanceFromOrigin(point: { x: number; y: number }) {
@@ -171,13 +176,13 @@ class Grid {
   constructor(public scale: number) { }
 }
 ```
-**
- * Polymorphism
+
+** Polymorphism
  *
  * Polymorphism allows you to treat objects of different classes in a uniform way.
- *
- ```
-class Animal2 {
+
+
+```class Animal2 {
   makeSound() {
     console.log("Generic animal sound");
   }
@@ -198,12 +203,13 @@ class Cat2 extends Animal2 {
 let animals: Animal2[] = [new Dog2(), new Cat2()];
 animals.forEach(animal => animal.makeSound());
 ```
-**
- * Abstraction
+
+** Abstraction
  *
  * Abstraction hides complex implementation details, providing a simplified interface.
- *
- ```
+
+
+```
 abstract class Vehicle {
   abstract startEngine(): void;
   abstract stopEngine(): void;
@@ -221,12 +227,13 @@ class Car extends Vehicle {
   }
 }
 ```
-**
- * Encapsulation
+
+**Encapsulation
  *
  * Encapsulation protects the internal state of an object by hiding its data and implementation details.
  
- ```
+ 
+```
 class BankAccount {
   private _balance: number = 0;
 
